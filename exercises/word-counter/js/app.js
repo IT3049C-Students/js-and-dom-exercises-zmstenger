@@ -4,13 +4,13 @@ const wordStats = document.getElementById('stat')
 
 getWordCount = ()=>{
   var wordCount = ""
-  wordCount = textArea.textContent.split(" ").length.toString()
+  wordCount = textArea.value.split(" ").length.toString()
   return wordCount
 }
 
 getCharCount = ()=>{
   var charCount = ""
-  charCount+=textArea.textContent.length.toString()
+  charCount+=textArea.value.length.toString()
   return charCount
 }
 
@@ -20,6 +20,7 @@ getResults = ()=>{
 
 
 textArea.addEventListener('input', function(e){
+  e.preventDefault()
   wordStats.innerHTML = getResults()
   
   //("You've writtsdfsfen "+getWordCount()+" words and "+getCharCount()+" characters.")
